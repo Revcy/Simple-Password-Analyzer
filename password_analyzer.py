@@ -1,8 +1,11 @@
-passwd, passwd_mark, quit_prompt = input('Enter your password for analysis: '), 0, ''
+passwd_mark, quit_prompt = 0, ''
 
 print('', 'Problems:', sep='\n')
 
 while True:
+    
+    passwd = input('Enter your password for analysis: ')
+    
     if ' ' in passwd:
         print("Your password have a space(-s). I think password can be without space(-s)")
         break
@@ -40,14 +43,13 @@ while True:
         print('', 'Analysis: Bad password', sep='\n')
 
     print('')
-    quit_prompt = (input("You wanna quit (Yes[Да], No[Нет])? ").lower()).strip()
+    quit_prompt = input("You wanna quit (Yes[Да], No[Нет])? ").lower().strip()
 
     if quit_prompt == 'yes' or quit_prompt == 'да':
         break
     elif quit_prompt == 'no' or quit_prompt == 'нет':
         print('')
-        passwd = input('Enter your password for analysis: ')
     else:
         print('Unknown input. Try again')
         print('')
-        quit_prompt = (input("You wanna quit (Yes[Да], No[Нет])? ").lower()).strip()
+        quit_prompt = input("You wanna quit (Yes[Да], No[Нет])? ").lower().strip()
